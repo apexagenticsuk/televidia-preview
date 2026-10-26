@@ -91,3 +91,14 @@ footer .flogo{font-size:1.3rem;font-weight:800;letter-spacing:.12em}
 .fnav{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem;margin:.6rem 0 1rem}
 @media(max-width:699px){.grid.three.swipe{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;padding-bottom:.6rem;margin-inline:-1rem;padding-inline:1rem;scroll-padding-inline:1rem}
 .grid.three.swipe>*{flex:0 0 82%;scroll-snap-align:start}}
+
+@media(max-width:699px){.hero::before{background:linear-gradient(180deg,rgba(8,8,10,.45) 0%,rgba(8,8,10,.55) 18%,rgba(8,8,10,.86) 40%,rgba(8,8,10,.94) 65%,var(--bg) 100%)}.hero .hero-img{object-position:50% 0;height:62%}.hero h1{text-shadow:0 2px 18px rgba(0,0,0,.85)}}
+.ticker{display:flex;overflow:hidden;white-space:nowrap;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ticker .tk{display:flex;flex:none;animation:tk 60s linear infinite}
+.ticker .tk span::after{content:"\00B7";margin:0 .7em;color:var(--acc)}
+.ticker .tk span+span::before{content:none}
+@keyframes tk{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker{flex-wrap:wrap;white-space:normal;-webkit-mask:none}.ticker .tk{flex-wrap:wrap;animation:none}.ticker .tk[aria-hidden]{display:none}.ticker .tk span:last-child::after{content:none}}
+.ticker .tk+.tk::before{content:none}
+@media(prefers-reduced-motion:reduce){.ticker .tk{flex:1 1 100%;justify-content:center;row-gap:.3em}}
+@media(max-width:699px){.hero::before{background:linear-gradient(180deg,rgba(8,8,10,.4) 0%,rgba(8,8,10,.78) 20%,rgba(8,8,10,.9) 38%,rgba(8,8,10,.95) 65%,var(--bg) 100%)}}
