@@ -15,6 +15,10 @@
 <p class="social"><a href="https://www.instagram.com/televidia_uk/">Instagram</a><a href="https://www.linkedin.com/in/alastair-dell-41767b195/">LinkedIn</a></p>
 <p>Based in St Albans, Hertfordshire · Serving nationwide</p></footer>
 <script>
+(function(){var v=document.querySelector('.hero-vid');if(!v)return;var c=navigator.connection;if((c&&c.saveData)||matchMedia('(prefers-reduced-motion: reduce)').matches){v.remove();return}
+function go(){v.src=matchMedia('(max-width:699px)').matches?v.dataset.m:v.dataset.d;v.muted=true;v.addEventListener('playing',function(){v.classList.add('on')},{once:true});var p=v.play();if(p&&p.catch)p.catch(function(){v.remove()})}
+function idle(){'requestIdleCallback' in window?requestIdleCallback(go,{timeout:2000}):setTimeout(go,300)}
+document.readyState==='complete'?idle():addEventListener('load',idle,{once:true})})();
 document.querySelector('.menu-btn').onclick=function(){var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)};
 document.querySelectorAll('button.play').forEach(function(b){b.addEventListener('click',function(){var u=b.dataset.hls,v=document.createElement('video');v.controls=true;v.playsInline=true;v.autoplay=true;v.poster=b.querySelector('img').src;v.setAttribute('aria-label',b.getAttribute('aria-label').replace('Play film: ',''));
 function nat(){v.src=u;v.play().catch(function(){})}
