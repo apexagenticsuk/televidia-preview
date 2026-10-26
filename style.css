@@ -150,3 +150,8 @@ body.lb-open{overflow:hidden}
 .dgrid .card>p.cl{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .dgrid .more{min-height:44px;min-width:44px;padding:0 .2rem;background:none;border:0;color:var(--acc2);font:inherit;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;cursor:pointer;align-self:flex-start}
 .dgrid .more:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+
+.hero .cue{opacity:1}.hero .cue span{width:14px;height:14px;margin-top:8px;border-radius:0;background:none;border-right:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(45deg);animation:cue2 2s ease-in-out infinite;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
+@keyframes cue2{0%,100%{transform:translateY(0) rotate(45deg)}50%{transform:translateY(7px) rotate(45deg)}}
+@media(prefers-reduced-motion:reduce){.hero .cue span{animation:none}}
+@media(max-width:699px){.hero{padding-bottom:3.6rem}.hero .cue{display:flex;bottom:.3rem}}
