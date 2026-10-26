@@ -132,3 +132,7 @@ footer .flogo{font-size:1.3rem;font-weight:800;letter-spacing:.12em}
 @media(prefers-reduced-motion:reduce){.hero .hero-vid{display:none}}
 @media(min-width:700px){.hero>h1:not(.hero-img){max-width:min(46vw,520px)}}
 @media(max-width:699px){.hero::before{background:linear-gradient(180deg,transparent 0%,transparent 26%,rgba(8,8,10,.68) 42%,rgba(8,8,10,.9) 64%,var(--bg) 92%)!important}}
+@media(min-width:700px){.tallcard{justify-content:flex-start}.tallcard .vid.tall{max-width:none;width:100%;flex:1 1 0;min-height:0;display:flex}.tallcard .play.tall{aspect-ratio:auto;height:100%}.tallcard .vid.tall video{aspect-ratio:auto;height:100%;object-fit:contain}}
+@media(max-width:699px){.hero::before{background:linear-gradient(180deg,rgba(8,8,10,.3) 0%,rgba(8,8,10,.5) 28%,rgba(8,8,10,.82) 42%,rgba(8,8,10,.92) 62%,var(--bg) 92%)!important}}
+@keyframes rise2{from{opacity:.6;transform:translateY(8px)}to{opacity:1;transform:none}}
+.js-motion .hero>*:not(.hero-img){animation:rise2 .3s ease-out both}
