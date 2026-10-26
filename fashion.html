@@ -11,7 +11,11 @@
 <p>Based in St Albans, Hertfordshire · Serving nationwide</p></footer>
 <script>
 document.querySelector('.menu-btn').onclick=function(){var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)};
-document.querySelectorAll('video[data-hls]').forEach(function(v){if(v.canPlayType('application/vnd.apple.mpegurl'))return;v.addEventListener('play',function f(){v.removeEventListener('play',f);var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js';s.onload=function(){var h=new Hls();h.loadSource(v.dataset.hls);h.attachMedia(v);v.play()};document.head.appendChild(s)},{once:false})});
+document.querySelectorAll('button.play').forEach(function(b){b.addEventListener('click',function(){var u=b.dataset.hls,v=document.createElement('video');v.controls=true;v.playsInline=true;v.autoplay=true;v.poster=b.querySelector('img').src;v.setAttribute('aria-label',b.getAttribute('aria-label').replace('Play film: ',''));
+function nat(){v.src=u;v.play().catch(function(){})}
+if(window.Hls){go()}else{var s=document.createElement('script');s.src='hls.light.min.js';s.onload=go;s.onerror=nat;document.head.appendChild(s)}
+function go(){if(Hls.isSupported()){var h=new Hls();h.loadSource(u);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,function(){v.play().catch(function(){})})}else if(v.canPlayType('application/vnd.apple.mpegurl')){nat()}}
+b.replaceWith(v);v.focus();v.play&&v.play().catch(function(){})})});
 </script><script>
 (function(){var rm=window.matchMedia('(prefers-reduced-motion: reduce)');if(rm.matches||!('IntersectionObserver' in window))return;
 var d=document.documentElement;d.classList.add('js-motion');
