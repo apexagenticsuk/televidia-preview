@@ -50,3 +50,14 @@ footer a:hover{background:rgba(255,255,255,.08);color:var(--acc2)}.social{displa
 @media(hover:none){.card:hover{box-shadow:none}.btn:hover{transform:none}}
 @media(min-width:700px){.btn{width:auto;margin-right:.6rem}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.logos{grid-template-columns:repeat(5,minmax(0,1fr))}.logos.strip{grid-template-columns:repeat(8,minmax(0,1fr))}.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}body{font-size:18px}}
 @media(min-width:1100px){header{position:sticky;top:0;padding:.5rem 2rem;flex-wrap:nowrap}.menu-btn{display:none}nav{display:flex;flex-direction:row;width:auto;padding:0;gap:0}nav a{font-size:.78rem;padding:.5rem .7rem}nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--acc);background:transparent}}
+.hero{position:relative;isolation:isolate;margin:-1.5rem calc(50% - 50vw) 0;padding:0 1.1rem 2.5rem;min-height:min(92svh,900px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero>*:not(.hero-img){max-width:1160px;width:100%;margin-inline:auto}
+.hero .hero-img{position:absolute;inset:0;width:100%;height:115%;max-width:none;aspect-ratio:auto;object-fit:cover;margin:0;border-radius:0;z-index:-2;will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,8,10,.35) 0%,rgba(8,8,10,.15) 35%,rgba(8,8,10,.85) 72%,var(--bg) 100%),radial-gradient(120% 80% at 0% 100%,rgba(255,90,31,.18),transparent 60%)}
+.hero h1{font-size:clamp(2rem,6.6vw,4.4rem);max-width:17ch;margin:0 0 .5em;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+.hero p{font-size:1.05rem;margin:.2em 0}.hero .ctas{margin-top:1.2rem}
+.banner{position:relative;height:clamp(240px,48vw,520px);overflow:hidden;isolation:isolate}
+.banner img{position:absolute;inset:0;width:100%;height:118%;max-width:none;object-fit:cover;border-radius:0;will-change:transform}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,10,.25),rgba(8,8,10,.55) 55%,var(--bg))}
+main.has-banner{position:relative;margin-top:calc(-1 * clamp(110px,16vw,220px))}
+main.has-banner>h1:first-child{margin-top:0;text-shadow:0 2px 30px rgba(0,0,0,.6)}
