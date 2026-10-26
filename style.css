@@ -155,3 +155,9 @@ body.lb-open{overflow:hidden}
 @keyframes cue2{0%,100%{transform:translateY(0) rotate(45deg)}50%{transform:translateY(7px) rotate(45deg)}}
 @media(prefers-reduced-motion:reduce){.hero .cue span{animation:none}}
 @media(max-width:699px){.hero{padding-bottom:3.6rem}.hero .cue{display:flex;bottom:.3rem}}
+
+/* r10: phone hero shows the whole bike above the headline; more room above the chevron on desktop */
+@media(max-width:699px){.hero{--ph:calc(100vw*1010/1170);min-height:0;justify-content:flex-start;padding-top:calc(var(--ph)*.86)}
+.hero .hero-img{top:0;bottom:auto;height:var(--ph);aspect-ratio:auto;object-position:50% 50%}
+.hero::before{background:linear-gradient(180deg,transparent 0,transparent calc(var(--ph)*.62),rgba(8,8,10,.85) calc(var(--ph)*.86),var(--bg) var(--ph),var(--bg) 100%)!important}}
+@media(min-width:700px){.hero{padding-bottom:calc(2.5rem + 16px)}}
