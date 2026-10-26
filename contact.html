@@ -7,7 +7,7 @@
 <header><a class="logo" href="index.html" aria-label="TELEVIDIA home"><img src="img/brand/televidia-logo-white.png" alt="" width="2237" height="204"></a><button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button><nav id="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="filmfolio.html">Filmfolio</a><a href="dronefolio.html">Drone Folio</a><a href="photofolio.html">Photo Folio</a><a href="fashion.html">Fashion</a><a href="corporate.html">Corporate</a><a href="medical.html">Medical Folio</a><a href="pricing.html">Pricing</a><a href="contact.html" aria-current=page>Contact</a></nav></header>
 <div class="banner" aria-hidden="true"><img src="img/h/f67921f5-960.webp" srcset="img/h/f67921f5-960.webp 960w, img/h/f67921f5-1600.webp 1600w, img/h/f67921f5-2400.webp 2400w" sizes="100vw" alt="" fetchpriority="high" data-parallax></div><main class="has-banner"><h1>Let's Work Together</h1><img src="img/melody-background-ps-6608.webp" alt="On set with TELEVIDIA" loading="lazy">
 <section class="card contact"><img class="cbadge" src="img/brand/televidia-badge-480.webp" alt="" width="120" height="120" loading="lazy"><h2>Contact</h2>
-<form id="enq" class="enq" action="" method="post" data-mailto="alastair.iad@gmail.com" novalidate>
+<form id="enq" class="enq" data-mailto="alastair.iad@gmail.com" novalidate>
 <fieldset><legend>Name <span class="req">(required)</span></legend><div class="two"><label>First Name<input name="first_name" autocomplete="given-name" required></label><label>Last Name<input name="last_name" autocomplete="family-name" required></label></div></fieldset>
 <label>Email <span class="req">(required)</span><input type="email" name="email" autocomplete="email" required></label>
 <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
@@ -16,7 +16,7 @@
 <p class="ferr" role="alert" hidden></p>
 <button class="btn" type="submit">Send</button>
 </form>
-<div class="sent" id="sent" role="status" tabindex="-1" hidden><h3>Sent</h3><p class="sent-msg">Thank you!</p><button class="btn alt" type="button" id="again">Send another</button></div>
+<div class="sent" id="sent" role="status" tabindex="-1" hidden><h3>Your email app should open</h3><p>If it doesn't, email us directly at <a href="mailto:alastair.iad@gmail.com?subject=Project%20enquiry">alastair.iad@gmail.com</a></p><button class="btn alt" type="button" id="again">Start again</button></div>
 <p>Or email directly: <a class="btn alt" href="mailto:alastair.iad@gmail.com?subject=Project%20enquiry">Email alastair.iad@gmail.com</a></p>
 <h2>Location</h2><p>St. Albans<br>Based in St Albans, Hertfordshire · Serving nationwide</p>
 <h2>Socials</h2><p class="ctas"><a class="btn alt sbtn" href="https://instagram.com/televidia_uk" aria-label="TELEVIDIA on Instagram" rel="noopener"><img class="si-ig" src="img/brand/instagram-glyph-white.svg" alt="" width="24" height="24">Instagram</a><a class="btn alt sbtn" href="https://www.linkedin.com/in/alastair-dell-41767b195/" aria-label="TELEVIDIA on LinkedIn" rel="noopener"><img class="si-li" src="img/brand/linkedin-inbug-white.png" alt="" width="26" height="24">LinkedIn</a></p></section>
@@ -54,16 +54,14 @@ if(px.length){addEventListener('scroll',function(){if(!tick){tick=true;requestAn
 })();
 </script>
 <script>
-/* Enquiry form. Now: opens the visitor's email app (mailto). Later: set the form's action="https://..." to a form service URL and it POSTs there instead; nothing else changes. */
+/* Enquiry form: opens the visitor's email app with the message pre-filled (mailto). No form service is connected. */
 (function(){var f=document.getElementById('enq');if(!f)return;var sent=document.getElementById('sent'),err=f.querySelector('.ferr');
 function v(n){return (f.elements[n].value||'').trim()}
-function done(m){f.hidden=true;sent.hidden=false;sent.querySelector('.sent-msg').textContent=m;sent.focus()}
 document.getElementById('again').onclick=function(){f.reset();sent.hidden=true;f.hidden=false;f.elements.first_name.focus()};
 f.addEventListener('submit',function(e){e.preventDefault();var bad=[].filter.call(f.querySelectorAll('[required]'),function(x){return !x.checkValidity()});
 if(bad.length){err.hidden=false;err.textContent='Please fill in: '+bad.map(function(x){return x.closest('label').firstChild.textContent.trim()}).join(', ')+'.';bad[0].focus();return}err.hidden=true;
-var a=f.getAttribute('action');if(a){fetch(a,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){if(!r.ok)throw 0;done('Thank you!')}).catch(function(){err.hidden=false;err.textContent='Sorry, that did not send. Please email alastair.iad@gmail.com instead.'});return}
 var name=v('first_name')+' '+v('last_name');
 var body='Name: '+name+'\nEmail: '+v('email')+'\nPhone: '+v('phone')+'\nProject start date: '+v('start_date')+'\n\nProject Details:\n'+v('details');
 location.href='mailto:'+f.dataset.mailto+'?subject='+encodeURIComponent('Project enquiry from '+name)+'&body='+encodeURIComponent(body);
-done('Your email app should now be open with your message ready. Press send there to finish.')});})();
+f.hidden=true;sent.hidden=false;sent.focus()});})();
 </script></body></html>
