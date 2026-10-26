@@ -125,3 +125,5 @@ footer .flogo{font-size:1.3rem;font-weight:800;letter-spacing:.12em}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media(min-width:700px){.grid{grid-auto-flow:dense}.tallcard{grid-column:2;grid-row:2/span 2;display:flex;flex-direction:column;justify-content:center}.tallcard .vid.tall{max-width:330px;margin:0 auto}}
 @media(max-width:699px){.fnav{display:grid;grid-template-columns:1fr 1fr;gap:.1rem .5rem;max-width:360px;margin-inline:auto}.fnav a{justify-content:flex-start;padding:0 .6rem}}
+@media(min-width:700px){.tallcard .vid.tall{width:100%}.tallcard .play.tall{width:100%}}
+.vid.tall video{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}
