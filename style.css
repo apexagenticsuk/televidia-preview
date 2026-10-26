@@ -136,3 +136,17 @@ footer .flogo{font-size:1.3rem;font-weight:800;letter-spacing:.12em}
 @media(max-width:699px){.hero::before{background:linear-gradient(180deg,rgba(8,8,10,.3) 0%,rgba(8,8,10,.5) 28%,rgba(8,8,10,.82) 42%,rgba(8,8,10,.92) 62%,var(--bg) 92%)!important}}
 @keyframes rise2{from{opacity:.6;transform:translateY(8px)}to{opacity:1;transform:none}}
 .js-motion .hero>*:not(.hero-img){animation:rise2 .3s ease-out both}
+button.btn{font-family:inherit;border:0;cursor:pointer}
+.btn.watch::after{content:none}.btn.watch::before{content:"";width:0;height:0;border-style:solid;border-width:.42em 0 .42em .7em;border-color:transparent transparent transparent currentColor}
+@media(min-width:700px){.hero .ctas{display:flex;flex-wrap:wrap;gap:.75rem}.hero .ctas .btn{width:auto;margin:0}}
+.hero .cue{position:absolute;left:50%;bottom:.6rem;transform:translateX(-50%);width:44px;height:44px;display:flex;align-items:flex-start;justify-content:center;max-width:none;margin:0;opacity:.7}
+.hero .cue span{width:2px;height:26px;margin-top:6px;border-radius:2px;background:linear-gradient(180deg,transparent,#fff);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%{transform:translateY(-6px);opacity:0}40%{opacity:1}100%{transform:translateY(8px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.hero .cue span{animation:none}}
+@media(max-width:699px){.hero .cue{display:none}}
+.lb{position:fixed;inset:0;z-index:1000;background:#000;display:flex;align-items:center;justify-content:center}.lb video{width:100%;height:100%;max-height:100vh;object-fit:contain;aspect-ratio:auto}
+.lb-x{position:absolute;top:.75rem;right:.75rem;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(8,8,10,.7);color:#fff;font-size:1.8rem;line-height:1;cursor:pointer}
+body.lb-open{overflow:hidden}
+.dgrid .card>p.cl{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.dgrid .more{min-height:44px;min-width:44px;padding:0 .2rem;background:none;border:0;color:var(--acc2);font:inherit;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;cursor:pointer;align-self:flex-start}
+.dgrid .more:focus-visible{outline:2px solid var(--acc);outline-offset:2px}

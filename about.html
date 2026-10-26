@@ -17,15 +17,21 @@
 <p>Based in St Albans, Hertfordshire · Serving nationwide</p></footer>
 <script>
 (function(){var v=document.querySelector('.hero-vid');if(!v)return;var c=navigator.connection;if((c&&c.saveData)||matchMedia('(prefers-reduced-motion: reduce)').matches){v.remove();return}
-function go(){v.src=matchMedia('(max-width:699px)').matches?v.dataset.m:v.dataset.d;v.muted=true;v.addEventListener('playing',function(){v.classList.add('on')},{once:true});var p=v.play();if(p&&p.catch)p.catch(function(){v.remove()})}
+function go(){if(matchMedia('(max-width:699px)').matches){v.src=v.dataset.m}else{[[v.dataset.av1,'video/mp4; codecs="av01.0.08M.10"'],[v.dataset.d,'video/mp4; codecs="avc1.640028"']].forEach(function(x){var s=document.createElement('source');s.src=x[0];s.type=x[1];v.appendChild(s)});v.load()}v.muted=true;v.addEventListener('playing',function(){v.classList.add('on')},{once:true});var p=v.play();if(p&&p.catch)p.catch(function(){v.remove()})}
 function idle(){'requestIdleCallback' in window?requestIdleCallback(go,{timeout:2000}):setTimeout(go,300)}
 document.readyState==='complete'?idle():addEventListener('load',idle,{once:true})})();
 document.querySelector('.menu-btn').onclick=function(){var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)};
-document.querySelectorAll('button.play').forEach(function(b){b.addEventListener('click',function(){var u=b.dataset.hls,v=document.createElement('video');v.controls=true;v.playsInline=true;v.autoplay=true;v.poster=b.querySelector('img').src;v.setAttribute('aria-label',b.getAttribute('aria-label').replace('Play film: ',''));
-function nat(){v.src=u;v.play().catch(function(){})}
-if(window.Hls){go()}else{var s=document.createElement('script');s.src='hls.light.min.js';s.onload=go;s.onerror=nat;document.head.appendChild(s)}
-function go(){if(Hls.isSupported()){var h=new Hls();h.loadSource(u);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,function(){v.play().catch(function(){})})}else if(v.canPlayType('application/vnd.apple.mpegurl')){nat()}}
-b.replaceWith(v);v.focus();v.play&&v.play().catch(function(){})})});
+function attach(v,u){function nat(){v.src=u;v.play().catch(function(){})}
+function go(){if(Hls.isSupported()){var h=new Hls();h.loadSource(u);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,function(){v.play().catch(function(){})});v._h=h}else if(v.canPlayType('application/vnd.apple.mpegurl')){nat()}}
+if(window.Hls){go()}else{var s=document.createElement('script');s.src='hls.light.min.js';s.onload=go;s.onerror=nat;document.head.appendChild(s)}}
+document.querySelectorAll('button.play').forEach(function(b){b.addEventListener('click',function(){var v=document.createElement('video');v.controls=true;v.playsInline=true;v.autoplay=true;v.poster=b.querySelector('img').src;v.setAttribute('aria-label',b.getAttribute('aria-label').replace('Play film: ',''));
+attach(v,b.dataset.hls);b.replaceWith(v);v.focus();v.play&&v.play().catch(function(){})})});
+document.querySelectorAll('.watch').forEach(function(b){b.addEventListener('click',function(){var hv=document.querySelector('.hero-vid');hv&&hv.pause();var d=document.createElement('div');d.className='lb';d.setAttribute('role','dialog');d.setAttribute('aria-modal','true');d.setAttribute('aria-label',b.dataset.title);var c=document.createElement('button');c.type='button';c.className='lb-x';c.setAttribute('aria-label','Close film');c.textContent='×';var v=document.createElement('video');v.controls=true;v.playsInline=true;v.autoplay=true;v.setAttribute('aria-label',b.dataset.title);d.appendChild(v);d.appendChild(c);document.body.appendChild(d);document.body.classList.add('lb-open');
+function close(){if(!d.parentNode)return;v.pause();v._h&&v._h.destroy();d.remove();document.body.classList.remove('lb-open');document.removeEventListener('keydown',k);if(document.fullscreenElement)document.exitFullscreen().catch(function(){});hv&&hv.play().catch(function(){});b.focus()}
+function k(e){if(e.key==='Escape')close()}
+c.onclick=close;document.addEventListener('keydown',k);document.addEventListener('fullscreenchange',function f(){if(!document.fullscreenElement){document.removeEventListener('fullscreenchange',f);close()}});
+attach(v,b.dataset.hls);if(d.requestFullscreen)d.requestFullscreen().catch(function(){});c.focus();v.play().catch(function(){})})});
+document.querySelectorAll('.dgrid .card>p').forEach(function(p){p.classList.add('cl');if(p.scrollHeight<=p.clientHeight+2){p.classList.remove('cl');return}var m=document.createElement('button');m.type='button';m.className='more';m.textContent='More';m.setAttribute('aria-expanded','false');m.onclick=function(){var o=p.classList.toggle('cl');m.textContent=o?'More':'Less';m.setAttribute('aria-expanded',!o)};p.after(m)});
 </script><script>
 (function(){var rm=window.matchMedia('(prefers-reduced-motion: reduce)');if(rm.matches||!('IntersectionObserver' in window))return;
 var d=document.documentElement;d.classList.add('js-motion');
