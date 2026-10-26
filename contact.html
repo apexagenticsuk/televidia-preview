@@ -4,12 +4,18 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Contact | TELEVIDIA</title><meta name="description" content="Let&#x27;s Work Together. Email alastair.iad@gmail.com.">
 <link rel="stylesheet" href="style.css"></head><body>
-<header><a class="logo" href="index.html">TELEVIDIA</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="filmfolio.html">Filmfolio</a><a href="pricing.html">Pricing</a><a href="contact.html" aria-current="page">Contact</a></nav></header>
-<main><h1>Let's Work Together</h1><img src="img/melody-background-ps-49e5.webp" alt="On set with TELEVIDIA" loading="lazy">
-<p class="ctas"><a class="btn" href="mailto:alastair.iad@gmail.com?subject=Project%20enquiry">Email alastair.iad@gmail.com</a></p>
+<header><a class="logo" href="index.html">TELEVIDIA</a><nav id="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="filmfolio.html">Filmfolio</a><a href="pricing.html">Pricing</a><a href="contact.html" aria-current=page>Contact</a></nav></header>
+<main><h1>Let's Work Together</h1><img src="img/melody-background-ps-6608.webp" alt="On set with TELEVIDIA" loading="lazy">
+<section class="card contact"><h2>Contact</h2>
+<p><a class="btn" href="mailto:alastair.iad@gmail.com?subject=Project%20enquiry">Email alastair.iad@gmail.com</a></p>
 <p>Please include your name, phone, project start date and project details.</p>
-<p class="ctas"><a class="btn alt" href="https://www.televidia.com/contact">Use the enquiry form on televidia.com</a></p></main>
+<h2>Location</h2><p>St. Albans<br>Based in St Albans, Hertfordshire · Serving nationwide</p>
+<h2>Socials</h2><p class="ctas"><a class="btn alt" href="https://www.instagram.com/televidia_uk/">Instagram</a><a class="btn alt" href="https://www.linkedin.com/in/alastair-dell-41767b195/">LinkedIn</a></p></section>
+<p>Prefer a form? <a class="textlink" href="https://www.televidia.com/contact">Use the enquiry form on televidia.com</a></p></main>
 <footer><p><strong>Contact</strong><br><a href="mailto:alastair.iad@gmail.com">alastair.iad@gmail.com</a></p>
-<p><a href="https://www.instagram.com/televidia_uk/">Instagram</a> · <a href="https://www.linkedin.com/in/alastair-dell-41767b195/">LinkedIn</a></p>
+<p class="social"><a href="https://www.instagram.com/televidia_uk/">Instagram</a><a href="https://www.linkedin.com/in/alastair-dell-41767b195/">LinkedIn</a></p>
 <p>Based in St Albans, Hertfordshire · Serving nationwide</p></footer>
-</body></html>
+<script>
+document.querySelector('.menu-btn').onclick=function(){var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)};
+document.querySelectorAll('video[data-hls]').forEach(function(v){if(v.canPlayType('application/vnd.apple.mpegurl'))return;v.addEventListener('play',function f(){v.removeEventListener('play',f);var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js';s.onload=function(){var h=new Hls();h.loadSource(v.dataset.hls);h.attachMedia(v);v.play()};document.head.appendChild(s)},{once:false})});
+</script></body></html>

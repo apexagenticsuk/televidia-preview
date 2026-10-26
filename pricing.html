@@ -4,7 +4,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Pricing | TELEVIDIA</title><meta name="description" content="Starter Film £900, Event Coverage £1500, Documentary POA, Editing £200 per day.">
 <link rel="stylesheet" href="style.css"></head><body>
-<header><a class="logo" href="index.html">TELEVIDIA</a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="filmfolio.html">Filmfolio</a><a href="pricing.html" aria-current="page">Pricing</a><a href="contact.html">Contact</a></nav></header>
+<header><a class="logo" href="index.html">TELEVIDIA</a><nav id="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="filmfolio.html">Filmfolio</a><a href="pricing.html" aria-current=page>Pricing</a><a href="contact.html">Contact</a></nav></header>
 <main><h1>Pricing</h1><div class="grid">
 <article class="card"><h2>STARTER FILM - £900</h2><p>Polished interview style film to introduce you or your business.</p><ul><li>1-day shoot, 1 location</li><li>Camera operator &amp; assistant</li><li>2–3 minute edit with B-roll and music</li><li>Ready for web and socials</li></ul></article>
 <article class="card"><h2>EVENT COVERAGE - £1500</h2><p>Capture the excitement with fast-paced highlights.</p><ul><li>Full-day or multi-day coverage</li><li>Interviews, drone footage (optional)</li><li>2–4 minute highlight film and social edits</li></ul><p><strong>Extras:</strong></p><ul><li>Extra camera operator</li><li>Extra Interviewer</li><li>Vox pops</li></ul></article>
@@ -12,6 +12,9 @@
 <article class="card"><h2>EDITING: £200 PER DAY</h2><p>Editing charged according to time required</p></article></div>
 <h2>If your project doesn’t quite fit one of these packages, get in touch!</h2><p>I’m happy to tailor a quote to suit your specific needs and vision.</p><p class="ctas"><a class="btn" href="mailto:alastair.iad@gmail.com">Email TELEVIDIA</a><a class="btn alt" href="contact.html">Get in touch</a></p></main>
 <footer><p><strong>Contact</strong><br><a href="mailto:alastair.iad@gmail.com">alastair.iad@gmail.com</a></p>
-<p><a href="https://www.instagram.com/televidia_uk/">Instagram</a> · <a href="https://www.linkedin.com/in/alastair-dell-41767b195/">LinkedIn</a></p>
+<p class="social"><a href="https://www.instagram.com/televidia_uk/">Instagram</a><a href="https://www.linkedin.com/in/alastair-dell-41767b195/">LinkedIn</a></p>
 <p>Based in St Albans, Hertfordshire · Serving nationwide</p></footer>
-</body></html>
+<script>
+document.querySelector('.menu-btn').onclick=function(){var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o)};
+document.querySelectorAll('video[data-hls]').forEach(function(v){if(v.canPlayType('application/vnd.apple.mpegurl'))return;v.addEventListener('play',function f(){v.removeEventListener('play',f);var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js';s.onload=function(){var h=new Hls();h.loadSource(v.dataset.hls);h.attachMedia(v);v.play()};document.head.appendChild(s)},{once:false})});
+</script></body></html>
