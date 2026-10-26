@@ -120,3 +120,8 @@ footer .flogo{font-size:1.3rem;font-weight:800;letter-spacing:.12em}
 @media(max-width:699px){.hero::before{background:linear-gradient(180deg,transparent 0%,transparent 30%,rgba(8,8,10,.6) 46%,rgba(8,8,10,.85) 70%,var(--bg) 96%)!important}}
 @media(min-width:700px){.hero>h1:not(.hero-img){max-width:min(46vw,600px);font-size:clamp(2rem,3.7vw,3.3rem);hyphens:none;overflow-wrap:normal}.hero>h1+p:not(.hero-img){max-width:min(44vw,560px);font-size:clamp(1.3rem,2.2vw,1.8rem)}.hero .hero-img{left:38%;width:62%}}
 @media(min-width:700px){.hero::before{background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 38%,rgba(8,8,10,.55) 47%,transparent 60%),linear-gradient(180deg,transparent 62%,var(--bg) 100%)!important}}
+
+.play{position:relative}.rt{position:absolute;right:.6rem;bottom:.6rem;background:rgba(8,8,10,.78);color:#fff;font-size:.8rem;font-weight:600;letter-spacing:.04em;padding:.2em .55em;border-radius:6px;font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(min-width:700px){.grid{grid-auto-flow:dense}.tallcard{grid-column:2;grid-row:2/span 2;display:flex;flex-direction:column;justify-content:center}.tallcard .vid.tall{max-width:330px;margin:0 auto}}
+@media(max-width:699px){.fnav{display:grid;grid-template-columns:1fr 1fr;gap:.1rem .5rem;max-width:360px;margin-inline:auto}.fnav a{justify-content:flex-start;padding:0 .6rem}}
