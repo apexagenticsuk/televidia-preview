@@ -102,3 +102,21 @@ footer .flogo{font-size:1.3rem;font-weight:800;letter-spacing:.12em}
 .ticker .tk+.tk::before{content:none}
 @media(prefers-reduced-motion:reduce){.ticker .tk{flex:1 1 100%;justify-content:center;row-gap:.3em}}
 @media(max-width:699px){.hero::before{background:linear-gradient(180deg,rgba(8,8,10,.4) 0%,rgba(8,8,10,.78) 20%,rgba(8,8,10,.9) 38%,rgba(8,8,10,.95) 65%,var(--bg) 100%)}}
+
+/* r4 hero */
+.hero>picture{display:contents}
+.hero::before{background:linear-gradient(180deg,rgba(8,8,10,.25) 0%,transparent 22%,transparent 50%,rgba(8,8,10,.7) 78%,var(--bg) 100%)!important}
+.hero-more{margin:1.2rem 0 0}.hero-more p{margin:.2em 0}.hero-more p:first-child{font-size:1.2rem;font-weight:500;color:#d2d2d8}
+.hero-more strong{font-size:.85rem;font-stretch:118%;letter-spacing:.16em;text-transform:uppercase;color:var(--acc2)}
+@media(min-width:700px){.mb{display:none}
+.hero .hero-img{left:34%;width:66%;object-position:50% 30%}
+.hero::before{background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 33%,rgba(8,8,10,.6) 42%,transparent 58%),linear-gradient(180deg,transparent 60%,var(--bg) 100%)!important}
+.hero h1{max-width:12ch;font-size:clamp(2rem,4.6vw,3.6rem)}.hero h1+p{max-width:22ch}}
+@media(max-width:699px){.dk{display:none}.hero .hero-img{height:100%;object-position:50% 0}
+.hero::before{background:linear-gradient(180deg,transparent 0%,transparent 45%,rgba(8,8,10,.75) 68%,var(--bg) 96%)!important}
+.hero h1{text-shadow:0 2px 14px rgba(0,0,0,.7)}}
+@media(min-width:700px){.hero>h1:not(.hero-img),.hero>h1+p:not(.hero-img){max-width:12ch;margin-left:max(0px,calc((100% - 1160px)/2));margin-right:auto}.hero>h1+p:not(.hero-img){max-width:24ch}
+.hero::before{background:linear-gradient(90deg,var(--bg) 0%,rgba(8,8,10,.92) 30%,rgba(8,8,10,.5) 44%,transparent 62%),linear-gradient(180deg,transparent 60%,var(--bg) 100%)!important}}
+@media(max-width:699px){.hero::before{background:linear-gradient(180deg,transparent 0%,transparent 30%,rgba(8,8,10,.6) 46%,rgba(8,8,10,.85) 70%,var(--bg) 96%)!important}}
+@media(min-width:700px){.hero>h1:not(.hero-img){max-width:min(46vw,600px);font-size:clamp(2rem,3.7vw,3.3rem);hyphens:none;overflow-wrap:normal}.hero>h1+p:not(.hero-img){max-width:min(44vw,560px);font-size:clamp(1.3rem,2.2vw,1.8rem)}.hero .hero-img{left:38%;width:62%}}
+@media(min-width:700px){.hero::before{background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 38%,rgba(8,8,10,.55) 47%,transparent 60%),linear-gradient(180deg,transparent 62%,var(--bg) 100%)!important}}
