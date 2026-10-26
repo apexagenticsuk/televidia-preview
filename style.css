@@ -161,3 +161,13 @@ body.lb-open{overflow:hidden}
 .hero .hero-img{top:0;bottom:auto;height:var(--ph);aspect-ratio:auto;object-position:50% 50%}
 .hero::before{background:linear-gradient(180deg,transparent 0,transparent calc(var(--ph)*.62),rgba(8,8,10,.85) calc(var(--ph)*.86),var(--bg) var(--ph),var(--bg) 100%)!important}}
 @media(min-width:700px){.hero{padding-bottom:calc(2.5rem + 16px)}}
+/* r10: Televidia's own logo, favicon and official social icons */
+.logo::before{content:none}
+.logo img{display:block;height:17px;width:auto;max-width:none;border-radius:0}
+footer .flogo img{height:20px}
+@media(min-width:700px){.logo img{height:19px}}
+.social{align-items:center}
+.social .si{width:48px;height:48px;min-width:44px;min-height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%}
+.si img,.sbtn img{display:block;border-radius:0;max-width:none}
+.si-ig{width:24px;height:24px}.si-li{width:auto;height:24px}
+.sbtn{gap:.65rem}.sbtn img{height:22px;width:auto}
