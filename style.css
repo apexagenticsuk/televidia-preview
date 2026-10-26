@@ -171,3 +171,4 @@ footer .flogo img{height:20px}
 .si img,.sbtn img{display:block;border-radius:0;max-width:none}
 .si-ig{width:24px;height:24px}.si-li{width:auto;height:24px}
 .sbtn{gap:.65rem}.sbtn img{height:22px;width:auto}
+@media(min-width:700px){.hero .ctas{margin-bottom:1.25rem}}
