@@ -77,3 +77,17 @@ main.has-banner>h1:first-child{margin-top:0;text-shadow:0 2px 30px rgba(0,0,0,.6
 .js-motion .hero>*:nth-child(3){animation-delay:.08s}.js-motion .hero>*:nth-child(4){animation-delay:.16s}.js-motion .hero>*:nth-child(5){animation-delay:.24s}.js-motion .hero>*:nth-child(6){animation-delay:.32s}
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js-motion .rv{opacity:1;transform:none}[data-parallax]{transform:none!important}}
+
+.ticker{display:flex;flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;scrollbar-width:none;gap:0;-webkit-overflow-scrolling:touch}
+.ticker::-webkit-scrollbar{display:none}
+.ticker span+span::before{content:"\00B7";margin:0 .7em;color:var(--acc)}
+.play.tall{aspect-ratio:9/16}
+.vid.tall{max-width:300px;margin-inline:auto}
+@media(min-width:700px){.tallcard{grid-column:1/-1;display:grid;grid-template-columns:260px 1fr;gap:1.5rem;align-items:center}.tallcard .vid.tall{margin:0;max-width:none}}
+.card{transition:transform .35s ease,border-color .3s,box-shadow .3s}
+.card .play img{transition:transform .6s ease}
+@media(hover:hover){.card:hover,.js-motion .card.rv.in:hover{transform:translateY(-4px)}.card:hover .play img{transform:scale(1.05)}}
+footer .flogo{font-size:1.3rem;font-weight:800;letter-spacing:.12em}
+.fnav{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem;margin:.6rem 0 1rem}
+@media(max-width:699px){.grid.three.swipe{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;padding-bottom:.6rem;margin-inline:-1rem;padding-inline:1rem;scroll-padding-inline:1rem}
+.grid.three.swipe>*{flex:0 0 82%;scroll-snap-align:start}}
